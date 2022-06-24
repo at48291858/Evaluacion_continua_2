@@ -142,7 +142,7 @@
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(164, 23);
             this.txtPaterno.TabIndex = 8;
-            this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
+            this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParcial_KeyPress);
             // 
             // txtMaterno
             // 
@@ -338,6 +338,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAlumnos";
             this.Text = "Alumnos";
+            this.Load += new System.EventHandler(this.frmAlumnos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

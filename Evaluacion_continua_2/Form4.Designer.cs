@@ -145,6 +145,7 @@
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(174, 23);
             this.txtPaterno.TabIndex = 8;
+            this.txtPaterno.TextChanged += new System.EventHandler(this.txtPaterno_TextChanged);
             this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // txtMaterno

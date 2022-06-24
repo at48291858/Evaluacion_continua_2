@@ -90,8 +90,24 @@ namespace Evaluacion_continua_2
                 bono[i] = 200;
                 totalp[i] = neto[i] + bono[i];
             }
-
             
+        }
+
+        private void validarLetras(KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 58 && e.KeyChar <= 122))
+            {
+                MessageBox.Show("Solo se permite ingresar letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
+        }
+        private void validarNumeros(KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se permite ingresar numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -124,6 +140,8 @@ namespace Evaluacion_continua_2
 
         private void txtPaterno_KeyPress(object sender, KeyPressEventArgs e)
         {
+            validarLetras(e);
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 txtMaterno.Focus();
@@ -132,6 +150,8 @@ namespace Evaluacion_continua_2
 
         private void txtMaterno_KeyPress(object sender, KeyPressEventArgs e)
         {
+            validarLetras(e);
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 txtNombres.Focus();
@@ -140,6 +160,8 @@ namespace Evaluacion_continua_2
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
         {
+            validarLetras(e);
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 txtSueldo.Focus();
@@ -148,11 +170,17 @@ namespace Evaluacion_continua_2
 
         private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            validarNumeros(e);
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 btnGuardar.Focus();
             }
         }
 
+        private void txtPaterno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
